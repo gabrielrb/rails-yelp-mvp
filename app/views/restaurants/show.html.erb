@@ -1,3 +1,45 @@
 <h1>Restaurant</h1>
 
-<p>@restaurant</p>
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</p>
+
+
+<p>
+  <%= link_to 'Back to Restaurant Index', restaurants_path %>
+</p>
+
+
+<h3 class="mt-4">Reviews</h3>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.rating %> - <%= review.content %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= render 'reviews/new' %>
+
+
+
+
+
+
